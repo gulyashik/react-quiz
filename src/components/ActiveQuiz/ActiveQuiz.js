@@ -1,4 +1,5 @@
 import classes from './ActiveQuiz.module.css';
+import AnswerList from "../AnswerList/AnswerList";
 
 const ActiveQuiz =props =>(
             <div className={classes.ActiveQuiz}>
@@ -9,12 +10,10 @@ const ActiveQuiz =props =>(
                     </span>
                     <small> 2 из 10 </small>
                 </p>
-                <ul>
-                    <li>1</li>
-                    <li>2</li>
-                    <li>3</li>
-                    <li>4</li>
-                </ul>
+                {console.log(props.answers)}
+                <AnswerList
+                    answers = {props.answers}
+                />
             </div>
 )
 export default ActiveQuiz;
