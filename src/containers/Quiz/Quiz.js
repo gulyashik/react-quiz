@@ -6,15 +6,20 @@ class Quiz extends React.Component {
     state = {
         quiz:[
             {
-            answers:[
-                {text: 'Вопрос 1'},
-                {text: 'Вопрос 2'},
-                {text: 'Вопрос 3'},
-                {text: 'Вопрос 4'}
-            ]
+                question: 'Какого цвета небо?',
+                rightAnswerId: 2,
+                answers:[
+                    {text: 'черное', id: 1},
+                    {text: 'синее', id: 2},
+                    {text: 'розовое', id: 3},
+                    {text: 'голубое', id: 4}
+                ]
             }
         ]
     };
+     onClickHandler(answerId){
+        console.log("Answer ID:" + answerId);
+    }
     render(){
         return(
             <div className={classes.Quiz}>
@@ -22,6 +27,7 @@ class Quiz extends React.Component {
                     <h1> Ответьте на все вопросы </h1>
                     <ActiveQuiz
                         answers= {this.state.quiz[0].answers}
+                        onClickHandler = {this.onClickHandler}
                     />
                 </div>
             </div>

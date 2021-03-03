@@ -13,6 +13,7 @@ const ActiveQuiz =props =>(
                 {console.log(props.answers)}
                 <AnswerList
                     answers = {props.answers}
+                    onClickHandler = {props.onClickHandler}
                 />
             </div>
 )
