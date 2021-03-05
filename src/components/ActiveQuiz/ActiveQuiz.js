@@ -5,13 +5,14 @@ const ActiveQuiz =props =>(
             <div className={classes.ActiveQuiz}>
                 <p className={classes.Question}>
                     <span>
-                        <strong> 1. </strong> &nbsp;
+                        <strong> {props.activeQuestionNumber}. </strong> &nbsp;
                         Как дела?
                     </span>
-                    <small> 2 из 10 </small>
+                    <small> {props.activeQuestionNumber} из {props.quizLength} </small>
                 </p>
                 {console.log(props.answers)}
                 <AnswerList
+                    answerState = {props.answerState}
                     answers = {props.answers}
                     onClickHandler = {props.onClickHandler}
                 />
