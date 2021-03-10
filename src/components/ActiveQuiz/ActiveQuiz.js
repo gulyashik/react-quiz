@@ -6,11 +6,10 @@ const ActiveQuiz =props =>(
                 <p className={classes.Question}>
                     <span>
                         <strong> {props.activeQuestionNumber}. </strong> &nbsp;
-                        Как дела?
+                        {props.question}
                     </span>
                     <small> {props.activeQuestionNumber} из {props.quizLength} </small>
                 </p>
-                {console.log(props.answers)}
                 <AnswerList
                     answerState = {props.answerState}
                     answers = {props.answers}

@@ -28,7 +28,7 @@ class Quiz extends React.Component {
                 answers:[
                     {text: '1700', id: 1},
                     {text: '1701', id: 2},
-                    {text: '1705', id: 3},
+                    {text: '1703', id: 3},
                     {text: '1805', id: 4}
                 ],
             }
@@ -105,6 +105,7 @@ class Quiz extends React.Component {
                         <ActiveQuiz
                             answers= {this.state.quiz[this.state.activeQuestion].answers}
                             onClickHandler = {this.onClickHandler}
+                            question = {this.state.quiz[this.state.activeQuestion].question}
                             quizLength = {this.state.quiz.length}
                             activeQuestionNumber = {this.state.activeQuestion + 1}
                             answerState = {this.state.answerState}
