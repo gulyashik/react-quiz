@@ -34,7 +34,11 @@ class Quiz extends React.Component {
             }
         ]
     };
-     onClickHandler = answerId =>{
+    componentDidMount() {
+        console.log("Quiz ID:" + this.props.match.params.id)
+    }
+
+    onClickHandler = answerId =>{
          if(this.state.answerState){
              const key = Object.keys(this.state.answerState)
              if( this.state.answerState[key]==='success'){
