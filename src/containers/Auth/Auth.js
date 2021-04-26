@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import classes from "./Auth.module.css"
 import Button from "../../components/Button/Button";
 import Input from "../../components/UI/Input/Input";
-//import is from  'is_js'
+import is from  'is_js'
 export default class Auth extends Component {
     state = {
         formControls : {
@@ -10,7 +10,7 @@ export default class Auth extends Component {
                 value : '',
                 type : 'email',
                 label : 'Email',
-                errorMessage: 'Введитеч корректный email',
+                errorMessage: 'Введите корректный email',
                 valid: false,
                 touched: false,
                 validation : {
@@ -41,20 +41,23 @@ export default class Auth extends Component {
             isValid = value.trim() != '' && isValid
         }
         if(validation.email){
-            //isValid = is.email(value) && isValid
+            isValid = is.email(value) && isValid
         }
         if(validation.minLength){
-            isValid = value.length >= value.minLength && isValid
+            isValid = value.length >= validation.minLength && isValid
         }
         return isValid
     }
-    onChangeHandler(event, controlName){
+    onChangeHandler = (event, controlName) =>{
         const formControls = {...this.state.formControls}
         const control = {...formControls[controlName]}
         control.value = event.target.value
         control.touched = true
         control.valid = this.validateControl(control.value, control.validation)
-        console.log(controlName + event.target.value)
+        formControls[controlName] = control
+        this.setState({
+            formControls : formControls
+        })
     }
     renderInputs(){
         return Object.keys(this.state.formControls).map((controlName,index)=>{
