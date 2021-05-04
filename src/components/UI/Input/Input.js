@@ -18,7 +18,7 @@ const Input = props => {
             <input
                 id = {htmlFor}
                 type = {inputType}
-                value={props.name}
+                value={props.value}
                 onChange={props.onChange}/>
             {isInvalid(props)
             ?<span> {props.errorMessage || 'Введите верное значение'}</span>

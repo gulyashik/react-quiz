@@ -31,7 +31,7 @@ const FinishedQuiz = (props) => {
         </ul>
         <p> Правильно {successCount} из {props.quiz.length}</p>
         <div>
-            <Button retryHandler={props.retryHandler} type = "primary">
+            <Button onClick={props.retryHandler} type = "primary">
                 Повторить
             </Button>
             <Link to = "/">
