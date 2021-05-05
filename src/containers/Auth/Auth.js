@@ -39,7 +39,7 @@ export default class Auth extends Component {
         }
         let isValid = true
         if(validation.required){
-            isValid = value.trim() != '' && isValid
+            isValid = value.trim() !== '' && isValid
         }
         if(validation.email){
             isValid = is.email(value) && isValid

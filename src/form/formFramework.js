@@ -13,7 +13,7 @@ export function validate(value, validation = null) {
     }
     let isValid = true
     if (validation.required) {
-        isValid = value.trim() != '' && isValid
+        isValid = value.trim() !== '' && isValid
     }
     return isValid
 }
