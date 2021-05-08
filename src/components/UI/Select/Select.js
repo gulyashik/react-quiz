@@ -5,7 +5,7 @@ const Select = props => {
     return(
         <div className={classes.Select}>
             <label htmlFor={htmlFor}> {props.label} </label>
-            <select>
+            <select onChange={props.onChange}>
                 {props.options.map((option,index)=>{
                     return(
                     <option
