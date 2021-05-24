@@ -28,7 +28,7 @@ class QuizList extends Component {
                 <div>
                     <h1> Список тестов </h1>
                     {
-                        this.props.isLoading && this.props.quizes.length !==0
+                        this.props.loading && this.props.quizes.length !==0
                     ? <Loader/>
                     : <ul>
                          {this.renderQuizes()}
@@ -43,7 +43,7 @@ class QuizList extends Component {
 function mapStateToProps(state) {
     return {
         quizes: state.quiz.quizes,
-        isLoading: state.quiz.isLoading
+        loading: state.quiz.loading
     }
 }
 function mapDispatchToProps(dispatch) {
