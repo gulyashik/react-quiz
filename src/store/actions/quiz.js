@@ -53,7 +53,6 @@ export function quizNextQuestion(activeQuestion) {
 export function quizAnswerClick(answerId) {
     return (dispatch,getState)=> {
         const state = getState().quiz
-        console.log(state)
         if (state.answerState) {
             const key = Object.keys(state.answerState)
             if (state.answerState[key] === 'success') {
@@ -62,7 +61,6 @@ export function quizAnswerClick(answerId) {
         }
         const results = state.results;
         const question = state.quiz[state.activeQuestion];
-        console.log(answerId+ "question.rightAnswerId" + question.rightAnswerId)
         if (answerId === question.rightAnswerId) {
             if (!results[question.id]) {
                 results[question.id] = 'success'
